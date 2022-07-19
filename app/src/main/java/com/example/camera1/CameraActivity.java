@@ -44,10 +44,11 @@ public class CameraActivity extends AppCompatActivity {
                 Intent cameraIntent = new Intent(
                         android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 
-             //   startActivity(cameraIntent);
+           //   startActivity(cameraIntent);
 
                 Uri imagePath = createImage();
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,imagePath);
+
                 startActivityForResult(cameraIntent, CAMERA);
 
                // setImageUri(cameraIntent);
