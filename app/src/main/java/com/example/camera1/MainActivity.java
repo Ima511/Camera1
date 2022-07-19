@@ -6,16 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     Button _TakePhoto ;
+    LinearLayout ln_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         _TakePhoto = (Button) findViewById(R.id._TakePhoto);
+        ln_layout = (LinearLayout) findViewById(R.id.ln_layout);
 
         _TakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,5 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    public void lyOnClick(View view) {
+        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+        startActivity(intent);
+
     }
 }
